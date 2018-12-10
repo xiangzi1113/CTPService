@@ -7,13 +7,13 @@ MS部分负责行情数据（tick）的收集，分发与存储，是对ctp接�
 TS部分作为交易中心，负责交易指令的发送，与订单状态的保存，与MS相同，TS作为服务，通过redis监听固定频道来进行交易处理，落地采用异步队列形式。另外还提供一些查询命令。
 
 ###启动说明
-启动命令均在bin目录下
+启动命令均在bin目录下，start前要先build.sh
 
-***./ctpService start/stop default*** 该命令启动/停止MS与TS服务
+***./ctpService start/stop appkey*** 该命令启动/停止MS与TS服务
 
-***./ctpService startQ/stopQ default*** 该命令启动/停止消费队列，包括MS与TS
+***./ctpService startQ/stopQ appkey*** 该命令启动/停止消费队列，包括MS与TS
 
-***./ctpService status default*** 查看服务情况
+***./ctpService status appkey*** 查看服务情况
 
 ***./check.py*** 检查python依赖的包是否已经安装
 
